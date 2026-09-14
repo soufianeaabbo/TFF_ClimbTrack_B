@@ -16,6 +16,22 @@ db.sequelize.authenticate()
   });
   
 
+
+
+db.sequelize.sync()
+    .then(() => {
+        console.log("✅ Tables synchronisées");
+    })
+    .catch((err) => {
+        console.log("❌ Erreur de synchronisation");
+        console.log(err);
+    });
+
+
+
+
+
+
 app.get("/", (req, res) => {
   res.send("ClimbTrack API fonctionne !");
 });
