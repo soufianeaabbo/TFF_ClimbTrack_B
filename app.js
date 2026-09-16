@@ -4,6 +4,13 @@ const app = express();
 const PORT = 5000;
 const db = require("./models/config");
 
+// Importe toutes les routes de l'API
+const router = require("./routes");
+
+app.use(express.json());
+
+// Toutes les routes commenceront par /api
+app.use('/api', router);
 
 
 db.sequelize.authenticate()

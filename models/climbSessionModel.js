@@ -32,12 +32,10 @@ const climbSessionBuilder = (sequelize) => {
                 type: DataTypes.STRING(200),
                 allowNull: false
 
-
             },
             heure_debut: {
                 type: DataTypes.TIME,
                 allowNull: false
-
 
             },
             duree: {
@@ -49,21 +47,16 @@ const climbSessionBuilder = (sequelize) => {
                 type: DataTypes.STRING(200),
                 allowNull: true
 
-
             },
             objectif: {
                 type: DataTypes.INTEGER,
                 allowNull: true
 
-
             },
             notes: {
                 type: DataTypes.STRING(500),
                 allowNull: true
-
-
             },
-
 
         },
         {
