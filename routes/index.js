@@ -11,5 +11,15 @@ const authRouter = require("./authRouter");
 router.use('/auth', authRouter )
 
 
+const climbSessionRouter = require("./climbSessionRouter")
+router.use('/session', climbSessionRouter)
+
+
+const ascensionRouter = require("./acensionRouter")
+router.use('/ascension',ascensionRouter)
+
+
+
+
 
 module.exports = router;

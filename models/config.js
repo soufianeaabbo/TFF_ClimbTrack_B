@@ -35,14 +35,14 @@ db.SessionExo = exerciceSessionBuilder(sequelize)
 db.User.hasMany(db.ClimbSession, {
     foreignKey: {
         allowNull: false,
-        field: 'user_id'
+        name: 'user_id'
     }
 });
 
 db.ClimbSession.belongsTo(db.User, {
     foreignKey: {
         allowNull: false,
-        field: 'user_id'
+        name: 'user_id'
     }
 });
 
@@ -52,14 +52,14 @@ db.ClimbSession.belongsTo(db.User, {
 db.ClimbSession.hasMany(db.Ascension, {
     foreignKey: {
         allowNull: false,
-        field: 'session_id'
+        name: 'session_id'
     }
 });
 
 db.Ascension.belongsTo(db.ClimbSession, {
     foreignKey: {
         allowNull: false,
-        field: 'session_id'
+        name: 'session_id'
     }
 });
 
