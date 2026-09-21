@@ -57,6 +57,13 @@ const climbSessionBuilder = (sequelize) => {
                 type: DataTypes.STRING(500),
                 allowNull: true
             },
+            
+            // Permet de savoir si la session est encore en cours
+            terminee: {
+                type: DataTypes.BOOLEAN,
+                allowNull: false,
+                defaultValue: false
+            },
 
         },
         {
