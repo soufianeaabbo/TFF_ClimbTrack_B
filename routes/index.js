@@ -18,6 +18,9 @@ router.use('/session', climbSessionRouter)
 const ascensionRouter = require("./acensionRouter")
 router.use('/ascension',ascensionRouter)
 
+const exerciseRouter = require("./exerciceRouter")
+router.use('/exercice', exerciseRouter)
+
 
 
 

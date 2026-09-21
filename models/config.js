@@ -66,17 +66,12 @@ db.Ascension.belongsTo(db.ClimbSession, {
 
 // User 1 ─── N Exo
 db.User.hasMany(db.Exo, {
-    foreignKey: {
-        allowNull: false,
-        field: 'user_id'
-    }
+    foreignKey: 'user_id'
+        
 });
 
 db.Exo.belongsTo(db.User, {
-    foreignKey: {
-        allowNull: false,
-        field: 'user_id'
-    }
+    foreignKey: 'user_id'
 });
 
 
