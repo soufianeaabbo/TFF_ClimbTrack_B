@@ -16,15 +16,14 @@ const exerciceSessionBuilder = (sequelize) => {
                 autoIncrementIdentity: true
             },
 
-            exercice_id: {
+            session_renfo_id: {
                 type: DataTypes.BIGINT,
                 allowNull: false
             },
 
-            date: {
-                type: DataTypes.DATE,
-                allowNull: false,
-                defaultValue: DataTypes.NOW
+            exercice_id: {
+                type: DataTypes.BIGINT,
+                allowNull: false
             },
 
             charge: {

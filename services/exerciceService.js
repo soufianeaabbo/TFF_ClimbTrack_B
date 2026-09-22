@@ -1,7 +1,7 @@
 
 const db = require("../models/config");
 
-
+// exerciceService sert à gérer la bibliothèque d’exercices :
 const exerciceService = {
 
     createNewExo: async (exoToAdd) => {

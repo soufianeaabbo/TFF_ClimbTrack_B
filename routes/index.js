@@ -22,6 +22,12 @@ const exerciseRouter = require("./exerciceRouter")
 router.use('/exercice', exerciseRouter)
 
 
+const sessionRenfoRouter = require("./sessionRenfoRouter");
+router.use('/session-renfo', sessionRenfoRouter);
+
+const exerciceSessionRouter = require("./exerciceSessionRouter");
+router.use('/exercice-session', exerciceSessionRouter);
+
 
 
 
