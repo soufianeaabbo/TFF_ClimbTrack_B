@@ -11,19 +11,33 @@ const authController = {
         try {
             const newUser = req.body;
 
+            // Vérification du mot de passe
+            if (newUser.mdp.length < 8 || !/[A-Z]/.test(newUser.mdp) || !/[0-9]/.test(newUser.mdp) || !/[!@#$%^&*]/.test(newUser.mdp)
+            ) {
+                return res.status(400).json({
+                    message: "Votre mot de passe doit contenir au moins 8 caractères, une majuscule, un chiffre et un caractère spécial."
+                });
+            }
 
             if (await authService.emailAlreadyUsed(newUser.email)) {
-                res.status(409).json({ status: 409, message: 'Cette adresse mail est déjà utilisée' });
+                res.status(409).json({
+                    status: 409,
+                    message: 'Cette adresse mail est déjà utilisée'
+                });
             } else {
                 const userAdded = await authService.insert(newUser);
 
                 res.status(201).json(userAdded);
-
             }
+
         } catch (error) {
-            res.status(500).json({ status: 500, message: 'Une erreur serveur est survenue' });
+            res.status(500).json({
+                status: 500,
+                message: 'Une erreur serveur est survenue'
+            });
         }
     },
+
 
     login: async (req, res) => {
         try {
